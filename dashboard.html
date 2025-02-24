@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css"> <!-- استدعاء ملف CSS -->
+</head>
+<body>
+    <?php include 'includes/header.php'; ?> <!-- استدعاء رأس الصفحة -->
+
+    <div class="container">
+        <h1>Welcome to Dashboard</h1>
+        <p>Total Notifications: <?php include 'dashboard.php'; ?></p>
+
+        <div class="dashboard-links">
+            <a href="admin/user_management.html">Manage Users</a>
+            <a href="admin/notification_logs.html">Notification Logs</a>
+            <a href="admin/activity_monitoring.html">Activity Monitoring</a>
+            <a href="admin/system_settings.html">System Settings</a>
+            <a href="auth/logout.php" class="logout-btn">Logout</a>
+            <a href="notifications/send_notification.html">Send Notification</a>
+        </div>
+    </div>
+
+    <?php include 'includes/footer.php'; ?> <!-- استدعاء تذييل الصفحة -->
+</body>
+</html>
