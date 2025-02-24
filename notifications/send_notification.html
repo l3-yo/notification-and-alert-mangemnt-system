@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Notification</title>
+    <link rel="stylesheet" href="send_notification.css">
+</head>
+<body>
+    <?php include '../includes/header.php'; ?> <!-- استدعاء الهيدر -->
+
+    <div class="container">
+        <h2>Send Notification</h2>
+        <form action="send_notification.php" method="POST">
+            <label for="recipient">Select User:</label>
+            <select id="recipient" name="recipient" required>
+                <?php
+                include '../includes/db_connection.php';
+                $result = $conn->query("SELECT id, name FROM users WHERE role NOT IN ('Admin', 'IT Specialist')");
+                while ($user = $result->fetch_assoc()) {
+                    echo "<option value='{$user['id']}'>{$user['name']}</option>";
+                }
+                ?>
+            </select>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <label for="type">Notification Type:</label>
+            <select id="type" name="type">
+                <option value="Email">Email</option>
+                <option value="SMS">SMS</option>
+                <option value="App Notification">App Notification</option>
+            </select>
+
+            <button type="submit">Send Notification</button>
+        </form>
+    </div>
+
+    <?php include '../includes/footer.php'; ?> <!-- استدعاء الفوتر -->
+</body>
+</html>

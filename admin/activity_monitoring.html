@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Monitoring</title>
+    <link rel="stylesheet" href="activity_monitoring.css"> <!-- استدعاء ملف CSS -->
+</head>
+<body>
+    <?php include '../includes/header.php'; ?> <!-- استدعاء رأس الصفحة -->
+
+    <div class="container">
+        <h2>Activity Monitoring</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Action</th>
+                    <th>Details</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php include 'activity_monitoring.php'; ?> <!-- استدعاء بيانات الأنشطة -->
+            </tbody>
+        </table>
+    </div>
+
+    <?php include '../includes/footer.php'; ?> <!-- استدعاء تذييل الصفحة -->
+</body>
+</html>

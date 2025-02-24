@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Settings</title>
+    <link rel="stylesheet" href="system_settings.css"> <!-- استدعاء ملف CSS -->
+</head>
+<body>
+    <?php include '../includes/header.php'; ?> <!-- استدعاء رأس الصفحة -->
+
+    <div class="container">
+        <h2>System Settings</h2>
+        <form action="system_settings.php" method="POST">
+            <label for="default_notification">Default Notification Method:</label>
+            <select id="default_notification" name="default_notification">
+                <option value="Email">Email</option>
+                <option value="SMS">SMS</option>
+                <option value="App Notification">App Notification</option>
+            </select>
+
+            <label for="max_message_length">Max Message Length:</label>
+            <input type="number" id="max_message_length" name="max_message_length" min="50" max="500">
+
+            <label for="enable_logging">Enable Logging:</label>
+            <select id="enable_logging" name="enable_logging">
+                <option value="true">Enabled</option>
+                <option value="false">Disabled</option>
+            </select>
+
+            <button type="submit">Save Settings</button>
+        </form>
+    </div>
+
+    <?php include '../includes/footer.php'; ?> <!-- استدعاء تذييل الصفحة -->
+</body>
+</html>

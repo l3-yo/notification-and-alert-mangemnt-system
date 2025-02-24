@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Preferences</title>
+    <link rel="stylesheet" href="notification_preferences.css"> <!-- استدعاء ملف CSS -->
+</head>
+<body>
+    <?php include '../includes/header.php'; ?> <!-- استدعاء رأس الصفحة -->
+
+    <div class="container">
+        <h2>Notification Preferences</h2>
+        <form action="notification_preferences.php" method="POST">
+            <label>
+                <input type="checkbox" name="email_notifications" value="1"> Receive Email Notifications
+            </label>
+            <label>
+                <input type="checkbox" name="sms_notifications" value="1"> Receive SMS Notifications
+            </label>
+            <label>
+                <input type="checkbox" name="app_notifications" value="1"> Receive App Notifications
+            </label>
+            <button type="submit">Save Preferences</button>
+        </form>
+    </div>
+
+    <?php include '../includes/footer.php'; ?> <!-- استدعاء تذييل الصفحة -->
+</body>
+</html>
